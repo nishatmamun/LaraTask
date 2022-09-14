@@ -1,6 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\MainController;
+// use App\Models\User;
+// use App\Models\Phone;
+// use App\Models\Post;
+// use App\Models\Comment;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +24,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Route::get('/store', [PostController::class,'store']);
+// Route::get('/store', [CommentController::class,'store']);
+// Route::get('/store', [UserController::class,'store']);
+
+Route::get('/store', [MainController::class,'store'])->name('fetch.data');
+Route::get('/flash', [MainController::class,'flash'])->name('flash.data');
