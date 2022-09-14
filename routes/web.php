@@ -31,3 +31,4 @@ Route::get('/', function () {
 
 Route::get('/store', [MainController::class,'store'])->name('fetch.data');
 Route::get('/flash', [MainController::class,'flash'])->name('flash.data');
+Route::get('/seeder', [MainController::class,'seeder'])->name('seed.data');

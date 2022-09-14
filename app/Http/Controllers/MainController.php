@@ -95,4 +95,10 @@ class MainController extends Controller
         Comment::truncate();
         return redirect()->back();
     }
+
+    public function seeder(){
+        $seeder = new \Database\Seeders\AdminSeeder();
+        $seeder->run();
+        return redirect()->back();
+    }
 }
