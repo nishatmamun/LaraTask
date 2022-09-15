@@ -16,6 +16,7 @@
 <body>
     <div class="page-content">
         <div class="container-fluid">
+            <a href="{{route('dashboard')}}" class="btn btn-primary">Dashboard</a>
             <div class="row">
                 <div>
                     <div class="container d-flex flex-row">

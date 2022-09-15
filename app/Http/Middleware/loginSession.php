@@ -19,5 +19,8 @@ class loginSession
         if ($request->session()->missing('loginId')) {
             return redirect('/');
             }
+        else {
+            return $next($request);
+        }
     }
 }

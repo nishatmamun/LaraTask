@@ -14,6 +14,7 @@
 </head>
 
 <body>
+    <a href="{{route('dashboard')}}" class="btn btn-primary">Dashboard</a>
     <div class="page-content">
         <div class="container-fluid">
             <div class="row">
