@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Post;
 use App\Models\Comment;
+use App\Models\Admin;
 use Illuminate\Support\Facades\Http;
 
 class MainController extends Controller
@@ -86,13 +87,14 @@ class MainController extends Controller
                 
                 );
         }
-        dd("Data Stored");
+        return redirect()->back();
     }
 
     public function flash(){
         User::truncate();
         Post::truncate();
         Comment::truncate();
+        Admin::truncate();
         return redirect()->back();
     }
 
