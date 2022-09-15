@@ -18,4 +18,9 @@ class DataController extends Controller
         $data= Post::with('users')->get();
         return view('post_list', compact('data'));
     }
+
+    public function postComment(){
+        $data= Comment::with('posts')->get();
+        return view('post_comment', compact('data'));
+    }
 }

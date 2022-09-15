@@ -20,6 +20,10 @@
     <div class="container d-flex justify-content-between">
         <a href="{{ route('users.list') }}" class="btn btn-lg btn-primary">Users</a>
         <a href="{{ route('posts.list') }}" class="btn btn-lg btn-primary">Posts</a>
+        <a href="{{ route('posts.comment') }}" class="btn btn-lg btn-primary">Posts with Comments</a>
+    </div>
+    <div class="container mt-5">
+        <a class="btn btn-lg btn-danger" href="{{ route('signout')}}">Signout</a>
     </div>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

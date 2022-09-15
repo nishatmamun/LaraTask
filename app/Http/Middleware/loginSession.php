@@ -16,6 +16,8 @@ class loginSession
      */
     public function handle(Request $request, Closure $next)
     {
-        return $next($request);
+        if ($request->session()->missing('loginId')) {
+            return redirect('/');
+            }
     }
 }

@@ -20,19 +20,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth'])->name('dashboard');
-
-// require __DIR__.'/auth.php';
-
 Route::get('/store', [MainController::class,'store'])->name('fetch.data');
 Route::get('/flash', [MainController::class,'flash'])->name('flash.data');
 Route::get('/seeder', [MainController::class,'seeder'])->name('seed.data');
-Route::get('/Signin', [LoginController::class,'signIn'])->name('Signin');
+Route::post('/Signin', [LoginController::class,'signIn'])->name('Signin');
+Route::get('/Signout', [LoginController::class,'signOut'])->name('signout')->middleware(['loginSession']);
 
-Route::get('/userlist', [DataController::class,'userList'])->name('users.list');
-Route::get('/postlist', [DataController::class,'postList'])->name('posts.list');
+Route::get('/userlist', [DataController::class,'userList'])->name('users.list')->middleware(['loginSession']);
+Route::get('/postlist', [DataController::class,'postList'])->name('posts.list')->middleware(['loginSession']);
+Route::get('/postcomment', [DataController::class,'postComment'])->name('posts.comment')->middleware(['loginSession']);
 
 
 
