@@ -23,17 +23,13 @@
                         <div>
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title">Name: {{ $name->name }}</h5>
+                                    <h5 class="card-title">Username: {{ $post->users->name }}</h5>
+                                    <h5 class="card-title">Title: {{ $post->title }}</h5>
+                                    <p class="card-text">Description: {{ $post->body }}</p>
                                     <br>
+                                    <h5 class="card-title">Comments:</h5>
                                     @foreach ($data as $datas)
-                                    <h5 class="card-title">Title: {{ $datas->title }}</h5>
-                                    <p class="card-text">Description: {{ $datas->body }}</p>
-                                    <div class="d-flex flex-row-reverse">
-                                        <a class="btn btn-sm btn-primary"
-                                            href="{{ route('post.details',['id'=>$datas->post_id])}}">Details</a>
-                                    </div>
-                                    <br>
-                                    <hr>
+                                    <p class="card-text ml-3">Description: {{ $datas->body }}</p>
                                     @endforeach
                                     <hr>
                                 </div>

@@ -30,11 +30,14 @@ class DataController extends Controller
     }
 
     public function userDetails($id){
-       
-        // $data = User::where('user_id',$id)->first();
-        // Log::info($data);
-        // $data = User::find($id);
-        $data= User::find($id)->with('posts')->get();
-        return view('user_details', compact('data'));
+        $data= User::find($id)->posts;
+        $name = User::find($id);
+        return view('user_details', compact('data','name'));
+    }
+
+    public function postDetails($id){
+        $data= Post::find($id)->comments;
+        $post = Post::find($id);
+        return view('post_details', compact('data','post'));
     }
 }

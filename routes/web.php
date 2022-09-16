@@ -22,6 +22,7 @@ Route::controller(DataController::class)->group(function() {
     Route::get('/postcomment', 'postComment')->name('posts.comment')->middleware(['loginSession']);
     Route::get('/dashboard', 'dashboard')->name('dashboard')->middleware(['loginSession']);
     Route::get('/userdetails/{id}', 'userDetails')->name('user.details')->middleware(['loginSession']);
+    Route::get('/postdetails/{id}', 'postDetails')->name('post.details')->middleware(['loginSession']);
 });
 
 

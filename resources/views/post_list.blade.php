@@ -26,7 +26,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Name: {{ $datas->users->name }}</h5>
                                     <h5 class="card-title">Title: {{ $datas->title }}</h5>
-                                    <p class="card-text">Desccription: {{ $datas->body }}</p>
+                                    <p class="card-text">Description: {{ $datas->body }}</p>
                                     <hr>
                                 </div>
                                 @endforeach
