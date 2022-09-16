@@ -14,11 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::create('comments', function (Blueprint $table) {
-            $table->id();
-            $table->integer('postId');
+            $table->id('comment_id');
+            $table->unsignedBigInteger('post_id');
             $table->string('name');
             $table->string('email');
             $table->text('body');
+            $table->foreign('post_id')->references('post_id')->on('posts');
             $table->timestamps();
         });
     }

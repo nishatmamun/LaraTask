@@ -12,17 +12,17 @@ class Post extends Model
     use HasFactory;
 
     protected $fillable = [
-        'id',
-        'userId',
+        'post_id',
+        'user_id',
         'title',
         'body',
     ];
 
     public function users(){
-    return $this->belongsTo(User::class, 'userId');
+    return $this->belongsTo(User::class);
     }
 
     public function comments(){
-    return $this->hasMany(Comment::class, 'postId');
+    return $this->hasMany(Comment::class);
     }
 }

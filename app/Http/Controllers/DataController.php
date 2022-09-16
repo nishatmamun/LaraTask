@@ -23,4 +23,8 @@ class DataController extends Controller
         $data= Comment::with('posts')->get();
         return view('post_comment', compact('data'));
     }
+
+    public function dashboard(){
+        return view('dashboard');
+    }
 }

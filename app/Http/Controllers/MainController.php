@@ -19,16 +19,14 @@ class MainController extends Controller
 
         $data = json_decode($response->body());
 
-        echo "<pre>";
-
         foreach ($data as $user) 
         {
             $user = (array)$user;
 
             User::updateOrCreate(
-                ['id' => $user['id']],
+                ['user_id' => $user['id']],
                 [
-                    'id' => $user['id'],
+                    'user_id' => $user['id'],
                     'name' => $user['name'],
                     'username' => $user['username'],
                     'email' => $user['email'],
@@ -45,17 +43,15 @@ class MainController extends Controller
 
         $data = json_decode($response->body());
 
-        echo "<pre>";
-
         foreach ($data as $post) 
         {
             $post = (array)$post;
 
             Post::updateOrCreate(
-                ['id' => $post['id']],
+                ['post_id' => $post['id']],
                 [
-                    'id' => $post['id'],
-                    'userId' => $post['userId'],
+                    'post_id' => $post['id'],
+                    'user_id' => $post['userId'],
                     'title' => $post['title'],
                     'body' => $post['body']
                 ]
@@ -63,23 +59,22 @@ class MainController extends Controller
                 );
         }
 
+        
         $api_url3 = "https://jsonplaceholder.typicode.com/comments";
 
         $response = Http::get($api_url3);
 
         $data = json_decode($response->body());
 
-        echo "<pre>";
-
         foreach ($data as $comment) 
         {
             $comment = (array)$comment;
 
             Comment::updateOrCreate(
-                ['id' => $comment['id']],
+                ['comment_id' => $comment['id']],
                 [
-                    'id' => $comment['id'],
-                    'postId' => $comment['postId'],
+                    'comment_id' => $comment['id'],
+                    'post_id' => $comment['postId'],
                     'email' => $comment['email'],
                     'name' => $comment['name'],
                     'body' => $comment['body']
