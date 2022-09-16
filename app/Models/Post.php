@@ -18,11 +18,13 @@ class Post extends Model
         'body',
     ];
 
+    protected $primaryKey = 'post_id';
+
     public function users(){
-    return $this->belongsTo(User::class);
+    return $this->belongsTo(User::class, 'user_id');
     }
 
     public function comments(){
-    return $this->hasMany(Comment::class);
+    return $this->hasMany(Comment::class, 'post_id');
     }
 }

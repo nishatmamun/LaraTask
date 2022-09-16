@@ -8,7 +8,7 @@ use App\Http\Controllers\DataController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->middleware(['dashboard']);;
 
 Route::get('/store', [MainController::class,'store'])->name('fetch.data');
 Route::get('/flash', [MainController::class,'flash'])->name('flash.data');
@@ -16,10 +16,14 @@ Route::get('/seeder', [MainController::class,'seeder'])->name('seed.data');
 Route::post('/Signin', [LoginController::class,'signIn'])->name('Signin');
 Route::get('/Signout', [LoginController::class,'signOut'])->name('signout')->middleware(['loginSession']);
 
-Route::get('/userlist', [DataController::class,'userList'])->name('users.list')->middleware(['loginSession']);
-Route::get('/postlist', [DataController::class,'postList'])->name('posts.list')->middleware(['loginSession']);
-Route::get('/postcomment', [DataController::class,'postComment'])->name('posts.comment')->middleware(['loginSession']);
-Route::get('/dashboard', [DataController::class,'dashboard'])->name('dashboard')->middleware(['loginSession']);
+Route::controller(DataController::class)->group(function() {
+    Route::get('/userlist', 'userList')->name('users.list')->middleware(['loginSession']);
+    Route::get('/postlist', 'postList')->name('posts.list')->middleware(['loginSession']);
+    Route::get('/postcomment', 'postComment')->name('posts.comment')->middleware(['loginSession']);
+    Route::get('/dashboard', 'dashboard')->name('dashboard')->middleware(['loginSession']);
+    Route::get('/userdetails/{id}', 'userDetails')->name('user.details')->middleware(['loginSession']);
+});
+
 
 
 

@@ -18,7 +18,7 @@ class LoginController extends Controller
         if($user){
             if($request->password == $user->password){
                 $request->session()->put('loginId', $user->id);
-                return view('dashboard');
+                return redirect('/dashboard');
             }else{
                 return back()->with('fail','Password not matches');
             }

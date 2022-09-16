@@ -29,17 +29,21 @@
                                     <th>Email</th>
                                     <th>Phone</th>
                                     <th>Website</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($data as $datas)
                                 <tr>
-                                    <td>{{$datas->id}}</td>
+                                    <td>{{$datas->user_id}}</td>
                                     <td>{{$datas->name}}</td>
                                     <td>{{$datas->username}}</td>
                                     <td>{{$datas->email}}</td>
                                     <td>{{$datas->phone}}</td>
                                     <td>{{$datas->website}}</td>
+                                    <td><a class="btn btn-sm btn-primary"
+                                            href="{{route('user.details',['id'=>$datas->user_id])}}">Posts</a>
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -50,7 +54,7 @@
         </div> <!-- container-fluid -->
     </div>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    <script src=" https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"

@@ -18,7 +18,9 @@ class Comment extends Model
         'body'
     ];
 
+    protected $primaryKey = 'comment_id';
+
     public function posts(){
-    return $this->belongsTo(Post::class);
+    return $this->belongsTo(Post::class, 'post_id');
     }
 }

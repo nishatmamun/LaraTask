@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Post;
 use App\Models\Comment;
+use Illuminate\Support\Facades\Log;
 
 class DataController extends Controller
 {
@@ -26,5 +27,14 @@ class DataController extends Controller
 
     public function dashboard(){
         return view('dashboard');
+    }
+
+    public function userDetails($id){
+       
+        // $data = User::where('user_id',$id)->first();
+        // Log::info($data);
+        // $data = User::find($id);
+        $data= User::find($id)->with('posts')->get();
+        return view('user_details', compact('data'));
     }
 }
