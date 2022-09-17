@@ -18,13 +18,6 @@ class AdminSeeder extends Seeder
      */
     public function run()
     {
-        // $admins = [
-        //     ['username'=>'mamun','password'=>'mamun123'],
-        //     ['username'=>'rafid','password'=>'rafid123'],
-        //     ['username'=>'tasin','password'=>'tasin123'],
-        // ];
-        // Admin::insert($admins);
-
         DB::table('admins')->insert([
             'username' => Str::random(10),
             'password' => Hash::make('12345678'),
