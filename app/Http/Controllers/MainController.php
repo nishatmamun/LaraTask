@@ -8,6 +8,7 @@ use App\Models\Post;
 use App\Models\Comment;
 use App\Models\Admin;
 use Illuminate\Support\Facades\Http;
+use Artisan;
 
 class MainController extends Controller
 {
@@ -86,10 +87,9 @@ class MainController extends Controller
     }
 
     public function flash(){
-        User::truncate();
-        Post::truncate();
-        Comment::truncate();
-        Admin::truncate();
+        Artisan::call('migrate:refresh');
+        $seeder = new \Database\Seeders\AdminSeeder();
+        $seeder->run();
         return redirect()->back();
     }
 
