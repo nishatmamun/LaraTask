@@ -6,12 +6,12 @@ $title= "Post List";
 
 <div class="page-content">
     <div class="container-fluid">
-        <a href="{{route('dashboard')}}" class="btn btn-primary">Dashboard</a>
+        <h1 class="h2 my-3 d-flex justify-content-center">Post List</h1>
         <div class="row">
             <div>
                 <div class="container d-flex flex-row">
                     <div>
-                        <div class="card">
+                        <div class="card text-white bg-dark">
                             @foreach ($data as $datas)
                             <div class="card-body">
                                 <h5 class="card-title">Name: {{ $datas->users->name }}</h5>

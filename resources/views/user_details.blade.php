@@ -6,12 +6,12 @@ $title= "User Details";
 
 <div class="page-content">
     <div class="container-fluid">
-        <a href="{{route('dashboard')}}" class="btn btn-primary">Dashboard</a>
+        <h1 class="h2 my-3 d-flex justify-content-center">User Details</h1>
         <div class="row">
             <div>
                 <div class="container d-flex flex-row">
                     <div>
-                        <div class="card">
+                        <div class="card text-white bg-dark">
                             <div class="card-body">
                                 <h5 class="card-title">Name: {{ $name->name }}</h5>
                                 <br>
@@ -36,4 +36,5 @@ $title= "User Details";
         </div>
     </div>
 </div>
+
 @endsection
