@@ -10,6 +10,8 @@ To deploy this project
 
 -> Create a Database and name it LaraTask.
 
+-> Php artisan migrate
+
 -> npm install && npm run dev 
 
 -> php -S localhost:8000 -t public/
