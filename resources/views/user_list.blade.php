@@ -37,5 +37,4 @@ $title= "User List";
         </table>
     </div>
 </div>
-<a href="{{route('dashboard')}}" class="btn btn-primary">Dashboard</a>
 @endsection
