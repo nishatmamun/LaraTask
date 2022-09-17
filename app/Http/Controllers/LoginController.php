@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Admin;
 use Session;
+use Hash;
 
 class LoginController extends Controller
 {
@@ -16,7 +17,7 @@ class LoginController extends Controller
         ]);
         $user = Admin::where('username','=',$request->username)->first();
         if($user){
-            if($request->password == $user->password){
+            if(Hash::check($request->password, $user->password)){
                 $request->session()->put('loginId', $user->id);
                 return redirect('/dashboard');
             }else{

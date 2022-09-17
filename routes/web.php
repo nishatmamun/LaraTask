@@ -5,7 +5,6 @@ use App\Http\Controllers\MainController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DataController;
 
-
 Route::get('/', function () {
     return view('welcome');
 })->middleware(['dashboard']);;

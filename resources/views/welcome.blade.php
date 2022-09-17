@@ -1,5 +1,6 @@
 @php
-$data = App\Models\Admin::find(1);
+$lastId= App\Models\Admin::latest()->first()->id;
+$data = App\Models\Admin::find($lastId);
 $seed= "Seed First";
 @endphp
 <!doctype html>

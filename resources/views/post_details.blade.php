@@ -29,7 +29,7 @@
                                     <br>
                                     <h5 class="card-title">Comments:</h5>
                                     @foreach ($data as $datas)
-                                    <p class="card-text ml-3">Description: {{ $datas->body }}</p>
+                                    <p class="card-text ml-3">-> {{ $datas->body }}</p>
                                     @endforeach
                                     <hr>
                                 </div>
