@@ -6,7 +6,7 @@ A simple project of fetching user details from API.
 
 ## Deployment
 
-To deploy this project run
+To deploy this project
 
 -> Create a Database and name it LaraTask.
 
