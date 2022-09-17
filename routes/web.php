@@ -18,7 +18,6 @@ Route::get('/Signout', [LoginController::class,'signOut'])->name('signout')->mid
 Route::controller(DataController::class)->group(function() {
     Route::get('/userlist', 'userList')->name('users.list')->middleware(['loginSession']);
     Route::get('/postlist', 'postList')->name('posts.list')->middleware(['loginSession']);
-    Route::get('/postcomment', 'postComment')->name('posts.comment')->middleware(['loginSession']);
     Route::get('/dashboard', 'dashboard')->name('dashboard')->middleware(['loginSession']);
     Route::get('/userdetails/{id}', 'userDetails')->name('user.details')->middleware(['loginSession']);
     Route::get('/postdetails/{id}', 'postDetails')->name('post.details')->middleware(['loginSession']);

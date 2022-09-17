@@ -27,6 +27,10 @@
                                     <h5 class="card-title">Name: {{ $datas->users->name }}</h5>
                                     <h5 class="card-title">Title: {{ $datas->title }}</h5>
                                     <p class="card-text">Description: {{ $datas->body }}</p>
+                                    <div class="d-flex flex-row-reverse">
+                                        <a class="btn btn-sm btn-primary"
+                                            href="{{ route('post.details',['id'=>$datas->post_id])}}">Details</a>
+                                    </div>
                                     <hr>
                                 </div>
                                 @endforeach

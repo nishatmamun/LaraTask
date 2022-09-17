@@ -1,5 +1,5 @@
 @php
-$lastId= App\Models\Admin::latest()->first()->id;
+$lastId= App\Models\Admin::orderBy('id', 'desc')->first()->id;
 $data = App\Models\Admin::find($lastId);
 $seed= "Seed First";
 @endphp
@@ -30,14 +30,13 @@ $seed= "Seed First";
                             <div class=" mb-3">
                                 <label class="exampleInputEmail1 h4">Username</label>
                                 <input type="text" class="form-control" id="exampleInputEmail1" name="username"
-                                    placeholder="{{ (!empty($data->username)) ? $data->username : $seed }}"
+                                    value="{{ (!empty($data->username)) ? $data->username : $seed }}"
                                     id="exampleInputPassword1">
                                 <span class="text-danger h6">@error('username') {{ $message }} @enderror </span>
                             </div>
                             <div class="mb-5">
                                 <label class="exampleInputEmail1 h4">Password</label>
-                                <input type="password" class="form-control" name="password"
-                                    placeholder="{{ (!empty($data->password)) ? $data->password : $seed }}"
+                                <input type="password" class="form-control" name="password" placeholder="12345678"
                                     id="exampleInputPassword1">
                                 <span class="text-danger h6">@error('password') {{ $message }} @enderror </span>
                             </div>
